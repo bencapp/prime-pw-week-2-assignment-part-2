@@ -126,10 +126,16 @@ if (number >= 2) {
 // -- it is, so we set colorOne and colorTwo to 'purple'
 
 /*
+// FIX - we want to set colorOne to 'blue' and colorTwo to 'red', but this mixes them up.
+// Should be: 
+// let colorOne = 'blue';
+// let colorTwo = 'red';
 let colorOne = 'red';
 let colorTwo = 'blue';
 let mix = true;
 
+// FIX - colorOne is set to 'purple' here, but not colorTwo. We should add a line within the conditional:
+// colorTwo = 'purple';
 if (mix === true) {
   colorOne = 'purple';
 }
@@ -140,9 +146,16 @@ if (mix === true) {
 // -- they are so we console.log 'throw away the food!'
 
 /*
+// FIX - time should be declared using the 'let' keyword rather than the 'const' keyword, since we might want to change its value.
+// **note: I'm not sure about this change since maybe we do want time to remain constant, but I intuit that it should be changeable.**
+// it should read:
+// let time = 4;
 let temp = 40;
 const time = 4;
 
+// FIX - the OR operator is used here but we want to make sure that both conditions are true.
+// It should read:
+// if (temp > 39 && time >= 4) {}
 if (temp > 39 || time >= 4) {
   console.log('throw away the food!');
 }
@@ -156,6 +169,9 @@ if (temp > 39 || time >= 4) {
 let age = 21;
 const minAge = 21;
 
+// FIX - The '<=' operator checks if minAge is less than or equal to age, so this code would output 'no entry' for any age greater than the minimum.
+// There are multiple ways to fix the problem, but the one would be to switch the strings inside the console logs. The first console log should read
+// console.log('enter'); and the second should read console.log('no entry');.
 if(minAge <= age) {
   console.log('no entry');
 } else {
